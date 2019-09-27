@@ -24,7 +24,7 @@ def create_hparams(hparams_string=None, verbose=False):
         ################################
         # Data Parameters             #
         ################################
-        load_mel_from_disk=True,
+        load_mel_from_disk=False,
         training_files='/kaggle/working/tacotron/training.txt',
         validation_files='/kaggle/working/tacotron/testing.txt',
         text_cleaners=['english_cleaners'],
