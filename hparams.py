@@ -25,12 +25,12 @@ def create_hparams(hparams_string=None, verbose=False):
         # Data Parameters             #
         ################################
         load_mel_from_disk=False,
-        training_files='/kaggle/working/tacotron/training.txt',
-        validation_files='/kaggle/working/tacotron/testing.txt',
+        training_files='./training.txt',
+        validation_files='./testing.txt',
         text_cleaners=['basic_cleaners'],
 
         ################################
-        # Audio Parameters             #
+        # Audio Parameters            . #
         ################################
         max_wav_value=32768.0,
         sampling_rate=22050,
