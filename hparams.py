@@ -25,8 +25,8 @@ def create_hparams(hparams_string=None, verbose=False):
         # Data Parameters             #
         ################################
         load_mel_from_disk=False,
-        training_files='/content/gdrive/My Drive/25hours/training.txt',
-        validation_files='/content/gdrive/My Drive/25hours/testing.txt',
+        training_files='./training.txt',
+        validation_files='./testing.txt',
         text_cleaners=['basic_cleaners'],
 
         ################################
