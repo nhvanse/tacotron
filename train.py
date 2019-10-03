@@ -251,6 +251,12 @@ def train(output_directory, log_directory, checkpoint_path, warm_start, n_gpus,
                         output_directory, "checkpoint_{}".format(iteration))
                     save_checkpoint(model, optimizer, learning_rate, iteration,
                                     checkpoint_path)
+                    import os
+                    os.chdir('/kaggle/working')
+                    os.rename(checkpoint_path, '/kaggle/working/checkpoint_{}'.format(iteration))
+                    from IPython.display import FileLink
+                    FileLink('checkpoint_{}'.format(iteration))
+                    os.chdir('/kaggle/working/tacotron/')
 
             iteration += 1
 
