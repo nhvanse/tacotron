@@ -252,13 +252,15 @@ def train(output_directory, log_directory, checkpoint_path, warm_start, n_gpus,
                     save_checkpoint(model, optimizer, learning_rate, iteration,
                                     checkpoint_path)
 #                     import os
-                    
-                    os.rename(checkpoint_path, '/kaggle/working/checkpoint_{}'.format(iteration))
-                    from IPython.display import FileLink, display
-                    os.chdir('/kaggle/working')
-                    os.system('rm checkpoint_{}'.format(iteration - hparams.iters_per_checkpoint))
-                    display(FileLink('checkpoint_{}'.format(iteration)))
-                    os.chdir('/kaggle/working/tacotron/')
+                    try:
+                        os.rename(checkpoint_path, '/kaggle/working/checkpoint_{}'.format(iteration))
+                        from IPython.display import FileLink, display
+                        os.chdir('/kaggle/working')
+                        os.system('rm checkpoint_{}'.format(iteration - hparams.iters_per_checkpoint))
+                        display(FileLink('checkpoint_{}'.format(iteration)))
+                        os.chdir('/kaggle/working/tacotron/')
+                    except:
+                        print('cant rename')
 
             iteration += 1
 
