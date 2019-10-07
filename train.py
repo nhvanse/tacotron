@@ -254,8 +254,7 @@ def train(output_directory, log_directory, checkpoint_path, warm_start, n_gpus,
 #                     import os
                     
                     os.rename(checkpoint_path, '/kaggle/working/checkpoint_{}'.format(iteration))
-                    from IPython.display import FileLink
-                    import IPython.display.display as display
+                    from IPython.display import FileLink, display
                     os.chdir('/kaggle/working')
                     os.system('rm checkpoint_{}'.format(iteration - hparams.iters_per_checkpoint))
                     display(FileLink('checkpoint_{}'.format(iteration)))
